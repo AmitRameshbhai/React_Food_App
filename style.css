@@ -33,8 +33,8 @@
 }
 
 .logo {
-    width: 65px;
-    height: 65px;
+    width: 90px;
+    height: 90px;
 
     object-fit: cover;
 
@@ -42,6 +42,14 @@
 
     border: 2px solid #f5f0e6;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    transition: 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    border-color: #ff5200;
 }
 
 
@@ -76,12 +84,53 @@
 
 
 /* =========================
+   BODY
+========================= */
+
+.body {
+    margin: 10px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================
    SEARCH
 ========================= */
 
 .search {
-    padding: 10px;
-    font-size: 18px;
+    padding: 15px 25px 5px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box {
+    padding: 8px 14px;
+
+    font-size: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 20px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.search-box:hover {
+    border-color: #ffb088;
+}
+
+.search-box:focus {
+    border-color: #ff5200;
+    box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.12);
 }
 
 
@@ -90,7 +139,9 @@
 ========================= */
 
 .filter {
-    padding: 5px 10px;
+    padding: 5px 25px;
+    display: flex;
+    align-items: center;
 }
 
 .filter-btn {
@@ -101,9 +152,10 @@
     background-color: white;
 
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 20px;
 
     font-size: 14px;
+    font-weight: 500;
 
     cursor: pointer;
 
@@ -111,7 +163,50 @@
 }
 
 .filter-btn:hover {
-    background-color: #f5f5f5;
+    background-color: #ff5200;
+    color: white;
+    border-color: #ff5200;
+
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SEARCH BUTTON (matches filter-btn styling)
+========================= */
+
+.search button {
+    padding: 8px 18px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.search button:hover {
+    background-color: #ff5200;
+    color: white;
+    border-color: #ff5200;
+
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.search button:active {
+    transform: translateY(0);
 }
 
 
@@ -124,7 +219,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 25px;
 
-    padding: 15px 25px;
+    padding: 15px 25px 25px;
 }
 
 
@@ -140,6 +235,7 @@
     box-sizing: border-box;
 
     border-radius: 8px;
+    border: 1px solid transparent;
 
     cursor: pointer;
 
@@ -147,9 +243,14 @@
 }
 
 .res-card:hover {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    border-color: #ffd9c2;
+    box-shadow: 0 4px 12px rgba(255, 82, 0, 0.15);
 
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+}
+
+.res-card:hover h3 {
+    color: #ff5200;
 }
 
 
@@ -164,6 +265,12 @@
     object-fit: cover;
 
     border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.res-card:hover .res-logo {
+    transform: scale(1.03);
 }
 
 
@@ -175,6 +282,8 @@
     font-size: 18px;
 
     margin: 10px 0 6px;
+
+    transition: color 0.2s ease;
 }
 
 .res-card h4 {
@@ -195,7 +304,7 @@
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 25px;
 
-    padding: 15px 25px;
+    padding: 15px 25px 25px;
 }
 
 
@@ -276,4 +385,38 @@
         gap: 15px;
     }
 
+}
+
+.login {
+    padding: 8px 18px;
+    margin-left: 10px;
+
+    background-color: #fff;
+    color: #222;
+
+    border: 1px solid #ddd;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.2s ease;
+}
+
+.login:hover {
+    background-color: #ff5200;
+    color: white;
+
+    border-color: #ff5200;
+
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.login:active {
+    transform: translateY(0);
 }

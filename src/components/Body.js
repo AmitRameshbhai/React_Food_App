@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
 
 const Body = () => {
-  const [listofres, setlistofres] = useState([]);
+  const [listofres, setlistofres] = useState([]); // what's displayed
+  const [allRestaurants, setAllRestaurants] = useState([]); // untouched master copy
+  const [searchText, setsearchText] = useState("");
 
   useEffect(() => {
     fetchdata();
@@ -28,19 +30,39 @@ const Body = () => {
 
     console.log(restaurants);
     setlistofres(restaurants);
+    setAllRestaurants(restaurants); // save the untouched master copy
   };
 
-  // Conditional Renderding
   return listofres.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredreslist = allRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
+              );
+              setlistofres(filteredreslist);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredlist = listofres.filter(
-              (res) => res.info.avgRating > 4,
+            const filteredlist = allRestaurants.filter(
+              (res) => res.info.avgRating > 4.5,
             );
             setlistofres(filteredlist);
           }}
