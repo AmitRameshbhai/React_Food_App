@@ -102,12 +102,24 @@
 
 
 /* =========================
+   FILTER (search + top rated live here, side by side)
+========================= */
+
+.filter {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =========================
    SEARCH
 ========================= */
 
 .search {
-    padding: 15px 25px 5px;
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -132,53 +144,6 @@
     border-color: #ff5200;
     box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.12);
 }
-
-
-/* =========================
-   FILTER
-========================= */
-
-.filter {
-    padding: 5px 25px;
-    display: flex;
-    align-items: center;
-}
-
-.filter-btn {
-    margin: 10px;
-
-    padding: 8px 14px;
-
-    background-color: white;
-
-    border: 1px solid #ddd;
-    border-radius: 20px;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.filter-btn:hover {
-    background-color: #ff5200;
-    color: white;
-    border-color: #ff5200;
-
-    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
-    transform: translateY(-1px);
-}
-
-.filter-btn:active {
-    transform: translateY(0);
-}
-
-
-/* =========================
-   SEARCH BUTTON (matches filter-btn styling)
-========================= */
 
 .search button {
     padding: 8px 18px;
@@ -206,6 +171,40 @@
 }
 
 .search button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   FILTER BUTTON (Top Rated)
+========================= */
+
+.filter-btn {
+    padding: 8px 14px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #ff5200;
+    color: white;
+    border-color: #ff5200;
+
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.filter-btn:active {
     transform: translateY(0);
 }
 
@@ -419,4 +418,94 @@
 
 .login:active {
     transform: translateY(0);
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+.about-card {
+    max-width: 500px;
+    width: 100%;
+
+    margin: 10px;
+    padding: 40px 35px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+.about-card h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    padding: 15px 20px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    text-decoration: none;
+    color: #222;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+.social-icon:hover {
+    background-color: #ff5200;
+    color: white;
+
+    border-color: #ff5200;
+
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+.social-icon:hover img {
+    filter: brightness(0) invert(1);
 }
