@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./utils/About";
 import Contact from "./components/Contactus";
 import Error from "./components/Error";
+import Header from "./components/header";
 
 const Applayout = () => {
   return (

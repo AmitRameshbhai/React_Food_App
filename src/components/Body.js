@@ -1,4 +1,3 @@
-import { resumeToPipeableStream } from "react-dom/server";
 import RestroCard from "./restrocard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
@@ -20,8 +19,7 @@ const Body = () => {
 
     const restaurantCard = json?.data?.cards?.find(
       (card) =>
-        card?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+        card?.card?.card?.gridElements?.infoWithStyle?.restaurants?.length > 0,
     );
 
     const restaurants = (
